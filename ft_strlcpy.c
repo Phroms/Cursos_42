@@ -6,12 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:00:27 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/05 21:18:38 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:22:56 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {

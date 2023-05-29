@@ -6,12 +6,11 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:13:40 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/08 18:59:49 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:23:35 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

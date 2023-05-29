@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 19:53:32 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/29 16:21:21 by agrimald         ###   ########.fr       */
+/*   Created: 2023/05/26 16:56:15 by agrimald          #+#    #+#             */
+/*   Updated: 2023/05/29 18:29:03 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned int	i;
+	t_list	*nodo;
+	t_list	*middlemans;
 
-	i = 0;
-	while (s[i] != '\0')
+	nodo = *lst;
+	while (nodo != NULL)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		middlemans = nodo -> next;
+		ft_lstdelone(nodo, del);
+		nodo = middlemans;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return ((char *)0);
 }
-/*int main()
-{
-	char s[] = "hola que tal";
-	int c = '0';
-	printf("%s", ft_strchr(s, c));
-}*/

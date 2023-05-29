@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:24:19 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/15 12:56:07 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:23:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 int main()
 {
 	char s1[] = "hola buenas como estas, soy manolo";
-	char s2[] = "o";
+	char s2[] = "n";
 	printf("%s\n", ft_strnstr(s1, s2, 66));
 	printf("%ld\n", ft_strnstr(s1, s2, 66) - s1);
 	printf("%s\n", strnstr(s1, s2, 66));

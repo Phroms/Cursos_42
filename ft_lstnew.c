@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 19:53:32 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/29 16:21:21 by agrimald         ###   ########.fr       */
+/*   Created: 2023/05/23 20:02:21 by agrimald          #+#    #+#             */
+/*   Updated: 2023/05/29 16:18:52 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	i;
+	t_list	*new_list;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return ((char *)0);
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
+		return (NULL);
+	new_list -> content = content;
+	new_list -> next = NULL;
+	return (new_list);
 }
-/*int main()
-{
-	char s[] = "hola que tal";
-	int c = '0';
-	printf("%s", ft_strchr(s, c));
-}*/

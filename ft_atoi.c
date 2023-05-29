@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:45:24 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/15 13:34:47 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:16:59 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	ft_atoi(const char *str)
 }	
 /*int main()
 {
-	char o[] = "123a231bc";
+	char o[] = "hola123a231bc";
 	printf("%d\n", ft_atoi(o));
-	char p[] = "123a231bc";
+	char p[] = "hola123a231bc";
 	printf("%d\n", atoi(p));
 }*/

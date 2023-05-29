@@ -6,20 +6,27 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:55:17 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/15 12:42:58 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:19:37 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	const char		*j;
-	char			*i;
+	size_t	i;
+	char	*chr_dest;
+	char	*chr_src;
 
-	i = dst;
-	j = src;
-	while (n--)
-		*i++ = *j++;
-	return (dst);
+	chr_dest = (char *)dest;
+	chr_src = (char *)src;
+	if (n == 0 || (dest == 0 && src == 0))
+		return (dest);
+	i = 0;
+	while (i < n)
+	{
+		chr_dest[i] = chr_src[i];
+		i++;
+	}
+	return ((void *)chr_dest);
 }

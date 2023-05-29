@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 19:53:32 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/29 16:21:21 by agrimald         ###   ########.fr       */
+/*   Created: 2023/05/26 13:00:01 by agrimald          #+#    #+#             */
+/*   Updated: 2023/05/29 16:18:31 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (lst)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		if (lst -> next == NULL)
+			return (lst);
+		lst = lst -> next;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return ((char *)0);
+	return (lst);
 }
-/*int main()
-{
-	char s[] = "hola que tal";
-	int c = '0';
-	printf("%s", ft_strchr(s, c));
-}*/

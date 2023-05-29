@@ -6,7 +6,7 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:47:45 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/15 15:16:26 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:19:51 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	ptrdst = (unsigned char *)dst;
 	ptrsrc = (unsigned char *)src;
-	if (dst == NULL || src == NULL)
-		return (NULL);
+	if (dst == NULL && src == NULL)
+		return (0);
 	if (dst > src)
 	{
 		while (len > 0)
@@ -30,8 +30,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else
-	{
-		dst = ft_memcpy(dst, src, len);
-	}
-	return (dst);
+		ft_memcpy(dst, src, len);
+	return (ptrdst);
 }

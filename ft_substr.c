@@ -6,53 +6,35 @@
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 18:45:51 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/15 21:10:47 by agrimald         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:24:31 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//char	*ft_substr(char const *s, unsigned int start, size_t len)
-/*{
-	char *nuevaStr;
-	unsigned int i;
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*substring;
+	size_t	i;
+	size_t	longitud;
 
-	nuevaStr = malloc(len);
-	if (nuevaStr == NULL)
-		return (0);
+	longitud = ft_strlen(s);
+	if (start >= longitud)
+		return (ft_strdup(""));
+	if (start + len == longitud + 1 || len > longitud)
+		len = longitud - start;
+	substring = (char *)malloc(len + 1);
+	if (!substring)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (i < len && s[start + i] != '\0')
 	{
-		nuevaStr[i] = s[start + i];//start marca el inicio;
+		substring[i] = s[start + i];
 		i++;
 	}
-	if ()
-	return (nuevaStr);
-}*/
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char *nuevaStr;
-    size_t i;
-	size_t p;
-	
-	p = ft_strlen(s);
-	if (start >= p)
-			return (ft_strdup(""));
-	if (start + len == p + 1 || len > p)
-		len = p - start;
-    nuevaStr = (char *)malloc(len + 1);
-    if (!nuevaStr)
-        return NULL;
-    i = 0;
-    while (i < len && s[start + i] != '\0')
-    {
-        nuevaStr[i] = s[start + i];
-        i++;
-    }
-    nuevaStr[i] = '\0';
-   	return nuevaStr;
+	substring[i] = '\0';
+	return (substring);
 }
-
 /*int main()
 {
 	char dst[] = "";

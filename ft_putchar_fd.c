@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <agrimald@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 19:53:32 by agrimald          #+#    #+#             */
-/*   Updated: 2023/05/29 16:21:21 by agrimald         ###   ########.fr       */
+/*   Created: 2023/05/18 15:47:26 by agrimald          #+#    #+#             */
+/*   Updated: 2023/05/29 16:20:21 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return ((char *)0);
+	write(fd, &c, sizeof(char));
 }
-/*int main()
-{
-	char s[] = "hola que tal";
-	int c = '0';
-	printf("%s", ft_strchr(s, c));
-}*/
